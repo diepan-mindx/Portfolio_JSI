@@ -39,7 +39,7 @@ function login() {
 auth.onAuthStateChanged((user) => {
   if (
     !user &&
-    (location.pathname.includes("home") || location.pathname.includes("edit"))
+    (location.href.includes("home") || location.href.includes("edit"))
   ) {
     window.location.href = "index.html";
   }
@@ -85,5 +85,6 @@ document
 if (location.pathname.includes("home")) {
   loadProfile();
 }
+
 
 
