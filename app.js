@@ -37,7 +37,10 @@ function login() {
 
 /* ================= AUTH GUARD ================= */
 auth.onAuthStateChanged((user) => {
-  if (!user && (!location.pathname.includes("index") || !location.pathname.includes("signin"))) {
+  if (
+    !user &&
+    (location.pathname.includes("home") || location.pathname.includes("edit"))
+  ) {
     window.location.href = "index.html";
   }
 });
@@ -82,4 +85,5 @@ document
 if (location.pathname.includes("home")) {
   loadProfile();
 }
+
 
